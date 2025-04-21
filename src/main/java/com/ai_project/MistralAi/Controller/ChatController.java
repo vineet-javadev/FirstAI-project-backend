@@ -31,9 +31,14 @@ public class ChatController {
     }
 
 //    Generate full response and then pass
+    // @GetMapping("/ai/generate")
+    // public Map<String, Object> generate(@RequestParam String prompt) {
+    //     return analyzeResponse(this.chatModel.call(prompt));
+    // }
+
     @GetMapping("/ai/generate")
-    public Map<String, Object> generate(@RequestParam String prompt) {
-        return analyzeResponse(this.chatModel.call(prompt));
+    public String generate(@RequestParam String prompt){
+        return this.chatModel.call(prompt);
     }
 
     @GetMapping("/status")
